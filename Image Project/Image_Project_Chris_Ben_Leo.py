@@ -36,11 +36,11 @@ def color_scanner(image):
 
 
 def impressionist(draw, image):
-    for index in range(9999999):
+    for index in range(999999):
         x = randint(0,image.width-1)
         y = randint(0, image.height-1)
         (r,g,b) = image.getpixel((x,y))
-        circle(draw,(x,y),3,(r,g,b,200))
+        circle(draw,(x,y),5,(r,g,b,200))
         
 
 def main():
