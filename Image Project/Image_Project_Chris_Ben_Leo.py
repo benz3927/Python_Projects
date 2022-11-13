@@ -67,7 +67,7 @@ def main():
     canvas.show()
     end_time = time.time()
     print("elapsed time:", end_time - start_time)
-    
+    user_image.show()
     
 
 
