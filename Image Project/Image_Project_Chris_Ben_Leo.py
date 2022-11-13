@@ -33,9 +33,10 @@ def main():
 #     circle(draw, (200, 300), 100, (200, 200, 0,150))
 #     circle(draw, (325, 225), 125, (200, 50, 150,200))
 #     draw.rectangle((0, 0, 500, 250), fill = (0, 100, 100))
-    default = 'Federer.jpeg'
+    default = 'Federer.png'
 
 ## we make it so that the user can put an image of choice in, but set default to Federer
+    image_name = default
     image_name = input('enter the name of your image file')
     user_image = Image.open(str(image_name))
 #     impressionist(draw,snowy)
