@@ -1,3 +1,8 @@
+from PIL import Image, ImageDraw
+from random import *
+import time
+
+
 def color_totals(image):
     colors = {red:0,
               green:0,
@@ -14,3 +19,6 @@ def color_totals(image):
             else:
                 continue
     return colors
+
+default = Image.open("Federer.png")
+print(color_totals(default))
