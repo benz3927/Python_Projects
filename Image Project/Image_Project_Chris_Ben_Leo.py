@@ -24,12 +24,14 @@ def circle(draw, center, radius, color):
     draw.ellipse((center[0]-radius,center[1]-radius,center[0]+radius,center[1]+radius),fill = color)
 
 
-def impressionist(draw, image):
+def impressionist(draw, image,canvas):
     for index in range(999999):
         x = randint(0,image.width-1)
         y = randint(0, image.height-1)
         (r,g,b) = image.getpixel((x,y))
         circle(draw,(x,y),5,(r,g,b,200))
+    new_image = canvas.copy()
+    return new_image
 
 
 def color_totals(image):
@@ -49,14 +51,6 @@ def color_totals(image):
                 continue
     return colors
 
-def blues(draw, image, canvas):
-    for index in range(100000):
-        x = randint(0, image.width-1)
-        y = randint(0, image.height-1)
-        (r, g, b) = image.getpixel((x,y))
-        circle(draw, (x,y), 5, (r+5,g+20,b*2, 200))
-    new_image = canvas.copy()
-    return new_image
 
 def oranges(draw, image, canvas):
     for index in range(100000):
@@ -67,7 +61,18 @@ def oranges(draw, image, canvas):
     new_image = canvas.copy()
     return new_image
         
-def purples(draw, image, canvas):
+
+def lemons(draw, image,canvas):
+    for index in range(100000):
+        x = randint(0, image.width-1)
+        y = randint(0, image.height-1)
+        (r, g, b) = image.getpixel((x,y))
+        circle(draw, (x,y), 5, (r+70,g+70,b, 200))
+    new_image = canvas.copy()
+    return new_image
+        
+def blues(draw, image,canvas):
+
     for index in range(100000):
         x = randint(0, image.width-1)
         y = randint(0, image.height-1)
@@ -75,6 +80,14 @@ def purples(draw, image, canvas):
         circle(draw, (x,y), 5, (r,g+35,b*3, 200))
     new_image = canvas.copy()
     return new_image
+
+def collage(img1,img2,img3,img4):
+    new = Image.new("RGBA", (img1.width*2, img1.height*2))
+    new.paste(img1, (0,0))
+    new.paste(img2, (img1.width,img1.height))
+    new.paste(img3, (0,img1.height))
+    new.paste(img4, (img1.width,0))
+    new.show()
         
 
 def main():
@@ -100,25 +113,38 @@ def main():
 #     circle(draw, (325, 225), 125, (200, 50, 150,200))
 #     draw.rectangle((0, 0, 500, 250), fill = (0, 100, 100))
 
+
 # Back and white high resolution
 #     default = default.convert('L')
 #     default.show()
+
+
+# impressionist default
+
+    impressionistic = impressionist(draw, user_image,canvas) 
     
 # purples
     
-    purple = purples(draw, user_image, canvas) 
+    blue = blues(draw, user_image,canvas) 
     
+
     
-# Cool Hues Saturated blue green
-    blue = blues(draw, user_image, canvas)
+
 
 # Warm Hues Saturated red orange
-    orange = oranges(draw, user_image, canvas)
 
-# black_and_white(draw,default)
-    purple.show()
-    blue.show()
-    orange.show()
+    orange = oranges(draw, user_image,canvas)
+
+
+#lemon
+    lemon = lemons(draw, user_image,canvas)
+
+
+#     impressionistic.show()
+#     blue.show()
+#     orange.show()
+
+    collage(impressionistic,blue,lemon,orange)
     end_time = time.time()
     print("elapsed time:", end_time - start_time)
     
