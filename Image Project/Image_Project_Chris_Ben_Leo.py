@@ -42,6 +42,22 @@ def impressionist(draw, image):
         (r,g,b) = image.getpixel((x,y))
         circle(draw,(x,y),5,(r,g,b,200))
         
+        
+def black_and_white(draw, image):
+    for x in range(image.width):
+        for y in range(image.height):
+            (r,g,b) = image.getpixel((x, y))
+            if r + g + b > 384:
+                r = r + 256
+                g = g + 256
+                b = b + 256
+                
+            else:
+                r = r - 256
+                g = g - 256  
+                b = b - 256
+                image.putpixel((x, y), (r, g, b))
+        
 
 def main():
     
@@ -63,7 +79,8 @@ def main():
     image_name = input('enter the name of your image file')
     user_image = Image.open(image_name)
     
-    impressionist(draw,default)
+#     impressionist(draw,default)
+    black_and_white(draw,default)
     canvas.show()
     end_time = time.time()
     print("elapsed time:", end_time - start_time)
