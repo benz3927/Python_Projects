@@ -48,6 +48,27 @@ def color_totals(image):
             else:
                 continue
     return colors
+
+def blues(draw, image):
+    for index in range(100000):
+        x = randint(0, image.width-1)
+        y = randint(0, image.height-1)
+        (r, g, b) = image.getpixel((x,y))
+        circle(draw, (x,y), 5, (r+5,g+20,b*2, 200))
+
+def oranges(draw, image):
+    for index in range(100000):
+        x = randint(0, image.width-1)
+        y = randint(0, image.height-1)
+        (r, g, b) = image.getpixel((x,y))
+        circle(draw, (x,y), 5, (r*2,g+10,b-2, 200))
+        
+def purples(draw, image):
+    for index in range(100000):
+        x = randint(0, image.width-1)
+        y = randint(0, image.height-1)
+        (r, g, b) = image.getpixel((x,y))
+        circle(draw, (x,y), 5, (r,g+35,b*3, 200))
         
 
 def main():
@@ -72,14 +93,22 @@ def main():
 #     circle(draw, (200, 300), 100, (200, 200, 0,150))
 #     circle(draw, (325, 225), 125, (200, 50, 150,200))
 #     draw.rectangle((0, 0, 500, 250), fill = (0, 100, 100))
-    default = default.convert('L')
-    default.show()
+
+# Back and white high resolution
+#     default = default.convert('L')
+#     default.show()
+    
+# purples 
+    purples(draw, user_image) 
     
     
-    
-    
-    impressionist(draw,user_image)
-#     black_and_white(draw,default)
+# Cool Hues Saturated blue green
+    blues(draw,user_image)
+
+# Warm Hues Saturated red orange
+    oranges(draw, user_image)
+
+# black_and_white(draw,default)
     canvas.show()
     end_time = time.time()
     print("elapsed time:", end_time - start_time)
