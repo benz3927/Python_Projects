@@ -145,6 +145,18 @@ def main():
 #     orange.show()
 
     collage(impressionistic,blue,lemon,orange)
+    
+    # Matplotlib Color Pie Chart
+    color_dominance = color_totals(user_image)
+    
+    colors = list(color_dominance.keys())
+    counts = list(color_dominance.values())
+    
+    # Matplotlib pie chart for 'Color Dominance by Leo, Chris, and Ben'
+    plt.pie(counts,colors = ['red','green','blue'], labels = colors)
+    plt.title('Color Dominance by Leo, Chris, and Ben')
+    plt.show()
+    
     end_time = time.time()
     print("elapsed time:", end_time - start_time)
     
