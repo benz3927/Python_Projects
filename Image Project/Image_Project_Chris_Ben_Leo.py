@@ -63,6 +63,13 @@ def oranges(draw, image):
         (r, g, b) = image.getpixel((x,y))
         circle(draw, (x,y), 5, (r*2,g+10,b-2, 200))
         
+def lemon(draw, image):
+    for index in range(100000):
+        x = randint(0, image.width-1)
+        y = randint(0, image.height-1)
+        (r, g, b) = image.getpixel((x,y))
+        circle(draw, (x,y), 5, (r+70,g+70,b, 200))
+        
 def purples(draw, image):
     for index in range(100000):
         x = randint(0, image.width-1)
@@ -94,19 +101,18 @@ def main():
 #     circle(draw, (325, 225), 125, (200, 50, 150,200))
 #     draw.rectangle((0, 0, 500, 250), fill = (0, 100, 100))
 
-# Back and white high resolution
-#     default = default.convert('L')
-#     default.show()
-    
-# purples 
-    purples(draw, user_image) 
-    
     
 # Cool Hues Saturated blue green
     blues(draw,user_image)
 
 # Warm Hues Saturated red orange
     oranges(draw, user_image)
+    
+# purples 
+    purples(draw, user_image)
+
+#lemon
+    lemon(draw, user_image)
 
 # black_and_white(draw,default)
     canvas.show()
