@@ -103,7 +103,7 @@ def main():
 
     
 # Cool Hues Saturated blue green
-    blues(draw,user_image)
+    blue = blues(draw,user_image).copy
 
 # Warm Hues Saturated red orange
     oranges(draw, user_image)
