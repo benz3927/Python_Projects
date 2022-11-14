@@ -62,7 +62,15 @@ def black_and_white(draw, image):
 def main():
     
     start_time = time.time()
-    canvas = Image.new("RGB", (500, 500))
+    default = Image.open("Federer.png")
+
+## we make it so that the user can put an image of choice in, but set default to Federer
+    default
+    image_name = input('enter the name of your image file')
+    user_image = Image.open(image_name)
+    
+    
+    canvas = Image.new("RGB", (user_image.width, user_image.height))
     draw = ImageDraw.Draw(canvas, "RGBA")
 
 #     draw.ellipse((100, 200, 300, 400), fill = (200, 200, 0,150))
@@ -72,19 +80,16 @@ def main():
 #     circle(draw, (200, 300), 100, (200, 200, 0,150))
 #     circle(draw, (325, 225), 125, (200, 50, 150,200))
 #     draw.rectangle((0, 0, 500, 250), fill = (0, 100, 100))
-    default = Image.open("Federer.png")
-
-## we make it so that the user can put an image of choice in, but set default to Federer
-    default
-    image_name = input('enter the name of your image file')
-    user_image = Image.open(image_name)
     
-#     impressionist(draw,default)
-    black_and_white(draw,default)
+    
+    impressionist(draw,default)
+#     black_and_white(draw,default)
     canvas.show()
     end_time = time.time()
     print("elapsed time:", end_time - start_time)
     user_image.show()
+    default = default.convert('L')
+    default.show()
     
 
 
