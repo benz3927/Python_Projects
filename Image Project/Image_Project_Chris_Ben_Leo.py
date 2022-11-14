@@ -49,26 +49,32 @@ def color_totals(image):
                 continue
     return colors
 
-def blues(draw, image):
+def blues(draw, image, canvas):
     for index in range(100000):
         x = randint(0, image.width-1)
         y = randint(0, image.height-1)
         (r, g, b) = image.getpixel((x,y))
         circle(draw, (x,y), 5, (r+5,g+20,b*2, 200))
+    new_image = canvas.copy()
+    return new_image
 
-def oranges(draw, image):
+def oranges(draw, image, canvas):
     for index in range(100000):
         x = randint(0, image.width-1)
         y = randint(0, image.height-1)
         (r, g, b) = image.getpixel((x,y))
         circle(draw, (x,y), 5, (r*2,g+10,b-2, 200))
+    new_image = canvas.copy()
+    return new_image
         
-def purples(draw, image):
+def purples(draw, image, canvas):
     for index in range(100000):
         x = randint(0, image.width-1)
         y = randint(0, image.height-1)
         (r, g, b) = image.getpixel((x,y))
         circle(draw, (x,y), 5, (r,g+35,b*3, 200))
+    new_image = canvas.copy()
+    return new_image
         
 
 def main():
@@ -78,7 +84,7 @@ def main():
 
 ## we make it so that the user can put an image of choice in, but set default to Federer
     default
-    image_name = input('enter the name of your image file')
+    image_name = input('enter the name of your image file: ')
     user_image = Image.open(image_name)
     
     print(color_totals(user_image))
@@ -98,18 +104,21 @@ def main():
 #     default = default.convert('L')
 #     default.show()
     
-# purples 
-    purples(draw, user_image) 
+# purples
+    
+    purple = purples(draw, user_image, canvas) 
     
     
 # Cool Hues Saturated blue green
-    blues(draw,user_image)
+    blue = blues(draw, user_image, canvas)
 
 # Warm Hues Saturated red orange
-    oranges(draw, user_image)
+    orange = oranges(draw, user_image, canvas)
 
 # black_and_white(draw,default)
-    canvas.show()
+    purple.show()
+    blue.show()
+    orange.show()
     end_time = time.time()
     print("elapsed time:", end_time - start_time)
     
@@ -121,5 +130,5 @@ def main():
 
     #canvas = Image.new("RGB", (500, 500))
     
-    #canvas.show()
+#     canvas.show()
 main()
