@@ -22,7 +22,6 @@ from matplotlib import pyplot as plt
 
 def circle(draw, center, radius, color):
     draw.ellipse((center[0]-radius,center[1]-radius,center[0]+radius,center[1]+radius),fill = color)
-    
 
 
 def impressionist(draw, image):
@@ -33,6 +32,22 @@ def impressionist(draw, image):
         circle(draw,(x,y),5,(r,g,b,200))
 
 
+def color_totals(image):
+    colors = {"red": 0,
+              "green": 0,
+              "blue": 0}
+    for x in range(image.width):
+        for y in range(image.height):
+            (r,g,b) = image.getpixel((x,y))
+            if r>g and r>b:
+                colors["red"] = colors["red"] + 1
+            elif g>r and g>b:
+                colors["green"] = colors["green"] + 1
+            elif b>r and b>g:
+                colors["blue"] = colors["blue"] + 1
+            else:
+                continue
+    return colors
         
 
 def main():
@@ -45,6 +60,7 @@ def main():
     image_name = input('enter the name of your image file')
     user_image = Image.open(image_name)
     
+    print(color_totals(user_image))
     
     canvas = Image.new("RGB", (user_image.width, user_image.height))
     draw = ImageDraw.Draw(canvas, "RGBA")
@@ -56,16 +72,18 @@ def main():
 #     circle(draw, (200, 300), 100, (200, 200, 0,150))
 #     circle(draw, (325, 225), 125, (200, 50, 150,200))
 #     draw.rectangle((0, 0, 500, 250), fill = (0, 100, 100))
+    default = default.convert('L')
+    default.show()
     
     
-    impressionist(draw,default)
+    
+    
+    impressionist(draw,user_image)
 #     black_and_white(draw,default)
     canvas.show()
     end_time = time.time()
     print("elapsed time:", end_time - start_time)
-    user_image.show()
-    default = default.convert('L')
-    default.show()
+    
     
 
 
