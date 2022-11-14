@@ -88,7 +88,7 @@ def main():
     image_name = input('enter the name of your image file')
     user_image = Image.open(image_name)
     
-    print(color_totals(user_image))
+    color_dominance = color_totals(user_image)
     
     canvas = Image.new("RGB", (user_image.width, user_image.height))
     draw = ImageDraw.Draw(canvas, "RGBA")
@@ -119,8 +119,13 @@ def main():
     end_time = time.time()
     print("elapsed time:", end_time - start_time)
     
+    colors = list(color_dominance.keys())
+    counts = list(color_dominance.values())
     
-
+    # Matplotlib pie chart for 'Color Dominance by Leo, Chris, and Ben'
+    plt.pie(counts,colors = ['red','green','blue'], labels = colors)
+    plt.title('Color Dominance by Leo, Chris, and Ben')
+    plt.show()
 
     
 
