@@ -24,16 +24,6 @@ def circle(draw, center, radius, color):
     draw.ellipse((center[0]-radius,center[1]-radius,center[0]+radius,center[1]+radius),fill = color)
     
 
-def color_scanner(image):
-    totals = []
-    # go through image pixel by pixel, domaninant,
-    
-    # color dominance
-    lbls = ['red','blue','green']
-    clrs = ['red','blue','green']
-    plt.pie(totals, explode = None, label = lbs, colors = clrs)
-    plt.show()
-
 
 def impressionist(draw, image):
     for index in range(999999):
@@ -41,22 +31,8 @@ def impressionist(draw, image):
         y = randint(0, image.height-1)
         (r,g,b) = image.getpixel((x,y))
         circle(draw,(x,y),5,(r,g,b,200))
-        
-        
-def black_and_white(draw, image):
-    for x in range(image.width):
-        for y in range(image.height):
-            (r,g,b) = image.getpixel((x, y))
-            if r + g + b > 384:
-                r = r + 256
-                g = g + 256
-                b = b + 256
-                
-            else:
-                r = r - 256
-                g = g - 256  
-                b = b - 256
-                image.putpixel((x, y), (r, g, b))
+
+
         
 
 def main():
