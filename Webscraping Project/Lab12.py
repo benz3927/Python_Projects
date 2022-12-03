@@ -55,6 +55,7 @@ def main():
     
     movie = input('give me a movie name: ')
     movie_url = link_getter(movie,parsed_code)
+    print(movie_url)
 #     
 #     print(get_cast(movie_url,parsed_code))
     
