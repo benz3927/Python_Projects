@@ -73,7 +73,9 @@ def country_counter(url):
 def main():
 
     url = "https://www.tennisexplorer.com/ranking/atp-men/"
-    print(country_counter(url))
+#     print(country_counter(url))
+    year2000 = "https://www.tennisexplorer.com/ranking/atp-men/2000/"
+    print(country_counter(year2000))
     
 main()
 
