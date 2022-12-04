@@ -37,10 +37,29 @@ def main():
     parsed_code = BeautifulSoup(source_code, "html.parser")
     
     everything = parsed_code.find_all("table", class_ = "result")
-#     print(everything)
+
+
+#     print(everything[1])
+    
+    chunk = everything[1].find_all("tr")
+    
+    countries = []
+    for item in chunk:
+        print(item.text + '_______')
+        
+        
+    
+    
+#     for index in range(len(chunk)):
+#         if (chunk[index].text == "t-name"):
+#             print(chunk[index + 1].text) 
+    
+    
+    
+    #     print(everything)
 
 #     player = everything.find("thead")
-    print(everything[1])
+    
 #     for item in everything:
 #         print(item.find("thead"))
 
