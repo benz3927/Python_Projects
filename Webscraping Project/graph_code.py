@@ -35,7 +35,7 @@ def country_counter(url):
             player_country[item[4][2:]] += 1
             
     return player_country
-
+ 
         
 def main():
     print(country_counter('https://www.tennisexplorer.com/ranking/atp-men/?page=1)'))
@@ -46,6 +46,7 @@ def main():
 # 
     plt.bar(y_pos, performance, align='center', alpha=0.5)
     plt.xticks(y_pos, countries)
+    plt.xticks(rotation=60, ha='right', fontsize=5.5)
     plt.ylabel('Players')
     plt.title('Countries in the Top 50')
     
