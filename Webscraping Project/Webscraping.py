@@ -2,6 +2,8 @@
 
 from bs4 import BeautifulSoup
 import requests
+import numpy as np
+import matplotlib.pyplot as plt
 
 def country_counter(url):
     source_code = requests.get(url).text
@@ -43,8 +45,6 @@ def country_counter(url):
     
     new_chunk = everything[1].find_all("tr")
     
-    print(new_chunk)
-    
     for item in new_chunk:
         item = item.text
         item = item.split("\n")
@@ -67,14 +67,9 @@ def country_counter(url):
 
         
 def main():
+
     url = "https://www.tennisexplorer.com/ranking/atp-men/"
     print(country_counter(url))
     
-
-    
-       
-    
-
-
 main()
 
