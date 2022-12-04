@@ -41,15 +41,11 @@ def main():
 
 #     print(everything[1])
     
-    chunk = everything[1].find_all("td")
+    chunk = everything[1].find_all("tr")
     
     for item in chunk:
-        print(item.text.split(''))
-    
-    
-#     countries = []
-#     for item in chunk:
-#         print(item.text)
+        print(item.text)
+
         
         
     
