@@ -55,6 +55,21 @@ def main():
             countries.append(item[4][2:])
     countries = countries[1:]
     print(countries)
+    
+    player_country = {}
+    for country in countries:
+        player_country[country] = []
+    
+    for item in chunk:
+        item = item.text
+        item = item.split("\n")
+        if item[4][2:] in player_country:
+            player_country[item[4][2:]].append(item[3])
+        
+    print(player_country)
+    
+    
+    
 
         
         
