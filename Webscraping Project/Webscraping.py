@@ -44,7 +44,7 @@ def main():
     chunk = everything[1].find_all("td")
     
     for item in chunk:
-        print(item.text)
+        print(item.text.split(''))
     
     
 #     countries = []
