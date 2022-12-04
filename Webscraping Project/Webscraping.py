@@ -36,8 +36,8 @@ def main():
     source_code = requests.get(url).text
     parsed_code = BeautifulSoup(source_code, "html.parser")
     
-#     everything = parsed_code.find_all("td", class_ = "lister-item-header")
-    print(parsed_code)
+    everything = parsed_code.find_all("table", class_ = "result")
+    print(everything)
     
 #     everything = parsed_code.find_all("a href", class_ = "lister-item-header")
 
