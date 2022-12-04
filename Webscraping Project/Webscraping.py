@@ -44,8 +44,10 @@ def main():
     chunk = everything[1].find_all("tr")
     
     for item in chunk:
-        print(item.text)
-
+        item = item.text
+        item = item.split("\n")
+        
+        print(item[5])
         
         
     
