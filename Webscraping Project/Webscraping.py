@@ -43,11 +43,19 @@ def main():
     
     chunk = everything[1].find_all("tr")
     
+    
+    countries = []
+    
     for item in chunk:
         item = item.text
         item = item.split("\n")
         
-        print(item[5])
+        # the 5th indexed value is country
+        if item[4][2:] not in countries:
+            countries.append(item[4][2:])
+    countries = countries[1:]
+    print(countries)
+
         
         
     
