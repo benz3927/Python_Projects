@@ -38,6 +38,9 @@ def main():
     
     everything = parsed_code.find_all("table", class_ = "result")
     print(everything)
+    for item in everything:
+
+#         print(item.find("t-name").text)
     
 #     everything = parsed_code.find_all("a href", class_ = "lister-item-header")
 
