@@ -54,6 +54,10 @@ def country_counter(url):
             countries.append(item[4][2:])
     
     countries = countries[1:]
+    countries.remove('ountry')
+    for country in countries:
+        if country not in player_country:
+            player_country[country] = 0
     
     for item in new_chunk:
         item = item.text
