@@ -37,8 +37,12 @@ def main():
     parsed_code = BeautifulSoup(source_code, "html.parser")
     
     everything = parsed_code.find_all("table", class_ = "result")
-    print(everything)
-    for item in everything:
+#     print(everything)
+
+#     player = everything.find("thead")
+    print(everything[1])
+#     for item in everything:
+#         print(item.find("thead"))
 
 #         print(item.find("t-name").text)
     
