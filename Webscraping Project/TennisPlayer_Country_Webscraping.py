@@ -164,7 +164,7 @@ def main():
     plt.bar(countries2000, player_counts2000, align='center', alpha=0.5)
     plt.xticks(rotation=60, ha='right', fontsize = 6.5)
     plt.ylabel('Country')
-    plt.title('Top 100 ATP Tennis Players by Country by Country in 2000')
+    plt.title('Top 100 ATP Tennis Players by Country in 2000')
     plt.savefig("2000 Tennis Players by Country.png", format="png", dpi=1200)
     plt.show()
 
@@ -174,7 +174,7 @@ def main():
     plt.bar(countries2005, player_counts2005, align='center', alpha=0.5)
     plt.xticks(rotation=60, ha='right', fontsize = 6.5)
     plt.ylabel('Country')
-    plt.title('Top 100 ATP Tennis Players by Country by Country in 2005')
+    plt.title('Top 100 ATP Tennis Players by Country in 2005')
     plt.savefig("2005 Tennis Players by Country.png", format="png", dpi=1200)
     plt.show()
     
@@ -183,7 +183,7 @@ def main():
     plt.bar(countries2009, player_counts2009, align='center', alpha=0.5)
     plt.xticks(rotation=60, ha='right', fontsize = 6.5)
     plt.ylabel('Country')
-    plt.title('Top 100 ATP Tennis Players by Country by Country in 2009')
+    plt.title('Top 100 ATP Tennis Players by Country in 2009')
     plt.savefig("2009 Tennis Players by Country.png", format="png", dpi=1200)
     plt.show()
     
@@ -192,7 +192,7 @@ def main():
     plt.bar(countries2014, player_counts2014, align='center', alpha=0.5)
     plt.xticks(rotation=60, ha='right', fontsize = 6.5)
     plt.ylabel('Country')
-    plt.title('Top 100 ATP Tennis Players by Country by Country in 2014')
+    plt.title('Top 100 ATP Tennis Players by Country in 2014')
     plt.savefig("2014 Tennis Players by Country.png", format="png", dpi=1200)
     plt.show()
     
