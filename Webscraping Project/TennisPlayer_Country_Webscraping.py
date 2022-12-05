@@ -151,22 +151,41 @@ def main():
     countries2000 = list(year2000_dict.keys())
     player_counts2000 = np.sort(list(year2000_dict.values()))[::-1]
     
+
     
     
-    
-    # Improve the resolution of matplotlib
+    # DPI = 1200 is used to improve/increase the resolution of matplotlib
+    # plt.figure(figsize=(8, 8)) is used to increase size of image
     
     # Graph Matplotlib Barplots
     
-    #2022
+    #2000
     plt.figure(figsize=(8, 8))
-    plt.bar(countries2022, player_counts2022, align='center', alpha=0.5)
+    plt.bar(countries2000, player_counts2000, align='center', alpha=0.5)
     plt.xticks(rotation=60, ha='right', fontsize = 6.5)
     plt.ylabel('Country')
-    plt.title('Top 100 ATP Tennis Players by Country by Country in 2022')
-    plt.savefig("2022 Tennis Players by Country.png", format="png", dpi=1200)
+    plt.title('Top 100 ATP Tennis Players by Country by Country in 2000')
+    plt.savefig("2000 Tennis Players by Country.png", format="png", dpi=1200)
+    plt.show()
+
+    
+    #2005
+    plt.figure(figsize=(8, 8))
+    plt.bar(countries2005, player_counts2005, align='center', alpha=0.5)
+    plt.xticks(rotation=60, ha='right', fontsize = 6.5)
+    plt.ylabel('Country')
+    plt.title('Top 100 ATP Tennis Players by Country by Country in 2005')
+    plt.savefig("2005 Tennis Players by Country.png", format="png", dpi=1200)
     plt.show()
     
+    #2009
+    plt.figure(figsize=(8, 8))
+    plt.bar(countries2009, player_counts2009, align='center', alpha=0.5)
+    plt.xticks(rotation=60, ha='right', fontsize = 6.5)
+    plt.ylabel('Country')
+    plt.title('Top 100 ATP Tennis Players by Country by Country in 2009')
+    plt.savefig("2009 Tennis Players by Country.png", format="png", dpi=1200)
+    plt.show()
     
     #2014
     plt.figure(figsize=(8, 8))
@@ -178,33 +197,16 @@ def main():
     plt.show()
     
     
-    #2009
+    #2022
     plt.figure(figsize=(8, 8))
-    plt.bar(countries2009, player_counts2009, align='center', alpha=0.5)
+    plt.bar(countries2022, player_counts2022, align='center', alpha=0.5)
     plt.xticks(rotation=60, ha='right', fontsize = 6.5)
     plt.ylabel('Country')
-    plt.title('Top 100 ATP Tennis Players by Country by Country in 2009')
-    plt.savefig("2009 Tennis Players by Country.png", format="png", dpi=1200)
+    plt.title('Top 100 ATP Tennis Players by Country by Country in 2022')
+    plt.savefig("2022 Tennis Players by Country.png", format="png", dpi=1200)
     plt.show()
     
-    #2005
-    plt.figure(figsize=(8, 8))
-    plt.bar(countries2005, player_counts2005, align='center', alpha=0.5)
-    plt.xticks(rotation=60, ha='right', fontsize = 6.5)
-    plt.ylabel('Country')
-    plt.title('Top 100 ATP Tennis Players by Country by Country in 2005')
-    plt.savefig("2005 Tennis Players by Country.png", format="png", dpi=1200)
-    plt.show()
-    
-    
-    #2000
-    plt.figure(figsize=(8, 8))
-    plt.bar(countries2000, player_counts2000, align='center', alpha=0.5)
-    plt.xticks(rotation=60, ha='right', fontsize = 6.5)
-    plt.ylabel('Country')
-    plt.title('Top 100 ATP Tennis Players by Country by Country in 2000')
-    plt.savefig("2000 Tennis Players by Country.png", format="png", dpi=1200)
-    plt.show()
+
     
 main()
 
