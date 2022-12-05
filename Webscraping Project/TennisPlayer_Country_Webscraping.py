@@ -21,7 +21,7 @@ def country_counter(url):
         # the 4th indexed value in item is the tennis player's country
         if item[4][2:] not in countries:
             countries.append(item[4][2:])
-    countries = countries[1:]
+
     
     player_country = {}
     for country in countries:
@@ -53,8 +53,9 @@ def country_counter(url):
         if item[4][2:] not in countries:
             countries.append(item[4][2:])
     
-    countries = countries[1:]
+
     countries.remove('ountry')
+    
     for country in countries:
         if country not in player_country:
             player_country[country] = 0
