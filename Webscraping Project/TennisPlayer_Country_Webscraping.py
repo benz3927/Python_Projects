@@ -53,7 +53,7 @@ def country_counter(url):
         if item[4][2:] not in countries:
             countries.append(item[4][2:])
     
-
+    # remove the country label title in beginning
     countries.remove('ountry')
     
     for country in countries:
