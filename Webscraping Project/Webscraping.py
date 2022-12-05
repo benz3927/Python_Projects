@@ -72,10 +72,14 @@ def country_counter(url):
         
 def main():
 
-    url = "https://www.tennisexplorer.com/ranking/atp-men/"
-#     print(country_counter(url))
+    year2022 = "https://www.tennisexplorer.com/ranking/atp-men/"
+    year2022_dict = country_counter(year2022)
+    
+    colors = list(color_dominance.keys())
+    counts = list(color_dominance.values())
+    
     year2000 = "https://www.tennisexplorer.com/ranking/atp-men/2000/"
-    print(country_counter(year2000))
+    year2000_dict = country_counter(year2000)
     
 main()
 
