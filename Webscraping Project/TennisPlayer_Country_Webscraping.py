@@ -203,7 +203,7 @@ def main():
     plt.bar(countries2022, player_counts2022, align='center', alpha=0.5)
     plt.xticks(rotation=60, ha='right', fontsize = 6.5)
     plt.ylabel('Country')
-    plt.title('Top 100 ATP Tennis Players by Country by Country in 2022')
+    plt.title('Top 100 ATP Tennis Players by Country in 2022')
     plt.savefig("2022 Tennis Players by Country.png", format="png", dpi=1200)
     plt.show()
     
