@@ -18,7 +18,7 @@ def country_counter(url):
         item = item.text
         item = item.split("\n")
         
-        # the 5th indexed value is country
+        # the 4th indexed value in item is the tennis player's country
         if item[4][2:] not in countries:
             countries.append(item[4][2:])
     countries = countries[1:]
