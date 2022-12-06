@@ -1,5 +1,3 @@
-# ideas scraping for NBA or tennis player data, economics Fed interest rates, etc. something else
-
 from bs4 import BeautifulSoup
 import requests
 import numpy as np
@@ -164,7 +162,7 @@ def main():
     plt.figure(figsize=(8, 8))
     plt.bar(countries2000, player_counts2000, align='center', alpha=0.5)
     plt.xticks(rotation=60, ha='right', fontsize = 6.5)
-    plt.ylabel('Country')
+    plt.ylabel('Number of Top 100 Players')
     plt.title('Top 100 ATP Tennis Players by Country in 2000')
     plt.savefig("2000 Tennis Players by Country.png", format="png", dpi=1200)
     plt.show()
@@ -174,7 +172,7 @@ def main():
     plt.figure(figsize=(8, 8))
     plt.bar(countries2005, player_counts2005, align='center', alpha=0.5)
     plt.xticks(rotation=60, ha='right', fontsize = 6.5)
-    plt.ylabel('Country')
+    plt.ylabel('Number of Top 100 Players')
     plt.title('Top 100 ATP Tennis Players by Country in 2005')
     plt.savefig("2005 Tennis Players by Country.png", format="png", dpi=1200)
     plt.show()
@@ -183,7 +181,7 @@ def main():
     plt.figure(figsize=(8, 8))
     plt.bar(countries2009, player_counts2009, align='center', alpha=0.5)
     plt.xticks(rotation=60, ha='right', fontsize = 6.5)
-    plt.ylabel('Country')
+    plt.ylabel('Number of Top 100 Players')
     plt.title('Top 100 ATP Tennis Players by Country in 2009')
     plt.savefig("2009 Tennis Players by Country.png", format="png", dpi=1200)
     plt.show()
@@ -192,7 +190,7 @@ def main():
     plt.figure(figsize=(8, 8))
     plt.bar(countries2014, player_counts2014, align='center', alpha=0.5)
     plt.xticks(rotation=60, ha='right', fontsize = 6.5)
-    plt.ylabel('Country')
+    plt.ylabel('Number of Top 100 Players')
     plt.title('Top 100 ATP Tennis Players by Country in 2014')
     plt.savefig("2014 Tennis Players by Country.png", format="png", dpi=1200)
     plt.show()
@@ -202,7 +200,7 @@ def main():
     plt.figure(figsize=(8, 8))
     plt.bar(countries2022, player_counts2022, align='center', alpha=0.5)
     plt.xticks(rotation=60, ha='right', fontsize = 6.5)
-    plt.ylabel('Country')
+    plt.ylabel('Number of Top 100 Players')
     plt.title('Top 100 ATP Tennis Players by Country in 2022')
     plt.savefig("2022 Tennis Players by Country.png", format="png", dpi=1200)
     plt.show()
